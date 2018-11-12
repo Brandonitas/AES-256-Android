@@ -1,4 +1,4 @@
-<h1>CryptoApp<h1>
+<h1>CryptoApp</h1>
 
 <p>CryptoApp encrypts text messages and save it with Advanced Encryption Standard.
 AES with 256-bit key is used for encryption.<p>
