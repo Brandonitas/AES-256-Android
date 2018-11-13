@@ -8,13 +8,17 @@ import java.io.IOException;
 import java.io.InputStream;
 import java.util.Scanner;
 
-/** Reads text file to string from assets/ directory */
+
 public class AssetsFileReader{
 	private final Context mContext;
 
 	public AssetsFileReader(Context context) {
 		mContext = context;
 	}
+
+	//---------------------------------
+	// READ JAVASCRIPT FILES
+	//---------------------------------
 
 	public String ReadFile(String fileName) throws IOException {
 		final AssetManager am = mContext.getAssets();

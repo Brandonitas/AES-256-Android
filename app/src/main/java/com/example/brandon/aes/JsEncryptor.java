@@ -10,7 +10,10 @@ import com.evgenii.jsevaluator.interfaces.JsEvaluatorInterface;
 import java.io.IOException;
 import java.util.ArrayList;
 
-/** Encrypts text using JavaScript library */
+//-----------------------------------------------
+// ENCRYPTS TEXT USING JAVASCRIPT LIBRARY
+//-----------------------------------------------
+
 public class JsEncryptor{
 	public static JsEncryptor evaluateAllScripts(Activity context) {
 		final AssetsFileReader assetsFileReader = new AssetsFileReader(context);
@@ -67,14 +70,6 @@ public class JsEncryptor{
 			mScriptsText = new ArrayList<String>();
 		}
 		return mScriptsText;
-	}
-
-
-	public boolean isEncrypted(String text) {
-		if (text == null)
-			return false;
-
-		return text.trim().startsWith(prefix);
 	}
 
 	public void readScripts() throws IOException {
