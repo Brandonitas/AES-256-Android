@@ -31,7 +31,7 @@ public class AboutActivity extends AppCompatActivity {
             "\n" +
             "Aplicación realizada por: \n" +
             "Brandon Reyes\n" +
-            "A01335537@itesm.mx";
+            "brandon.reyesmi@gmail.com";
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
