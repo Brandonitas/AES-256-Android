@@ -1,5 +1,7 @@
 <h1>CryptoApp</h1>
 
+<a href="#"><img src = "./google.png" width="200" heigh= "200"></a>
+
 <p>CryptoApp encrypts text messages and save it with Advanced Encryption Standard.<br>
 AES with 256-bit key is used for encryption.<p>
 
@@ -8,4 +10,4 @@ AES with 256-bit key is used for encryption.<p>
 
 [CryptoJS](https://code.google.com/p/crypto-js) library was used for encryption
 
-[JsEvaluator](https://github.com/evgenyneu/js-evaluator-for-android) library was used to execute JavaScript
+[JsEvaluator](https://github.com/evgenyneu/js-evaluator-for-android) library was used to execute and read JavaScript files in AndroidStudio
