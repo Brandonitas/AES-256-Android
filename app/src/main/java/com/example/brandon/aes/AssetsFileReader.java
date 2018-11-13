@@ -4,14 +4,12 @@ import android.content.Context;
 import android.content.res.AssetManager;
 
 
-import com.example.brandon.aes.interfaces.AssetsFileReaderInterface;
-
 import java.io.IOException;
 import java.io.InputStream;
 import java.util.Scanner;
 
 /** Reads text file to string from assets/ directory */
-public class AssetsFileReader implements AssetsFileReaderInterface {
+public class AssetsFileReader{
 	private final Context mContext;
 
 	public AssetsFileReader(Context context) {

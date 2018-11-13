@@ -6,14 +6,12 @@ import android.app.Activity;
 import com.evgenii.jsevaluator.JsEvaluator;
 import com.evgenii.jsevaluator.interfaces.JsCallback;
 import com.evgenii.jsevaluator.interfaces.JsEvaluatorInterface;
-import com.example.brandon.aes.interfaces.AssetsFileReaderInterface;
-import com.example.brandon.aes.interfaces.JsEncryptorInterface;
 
 import java.io.IOException;
 import java.util.ArrayList;
 
 /** Encrypts text using JavaScript library */
-public class JsEncryptor implements JsEncryptorInterface {
+public class JsEncryptor{
 	public static JsEncryptor evaluateAllScripts(Activity context) {
 		final AssetsFileReader assetsFileReader = new AssetsFileReader(context);
 		final JsEvaluator jsEvaluator = new JsEvaluator(context);
@@ -26,7 +24,7 @@ public class JsEncryptor implements JsEncryptorInterface {
 		return jsEncryptor;
 	}
 
-	private final AssetsFileReaderInterface mAssetsFileReader;
+	private final AssetsFileReader mAssetsFileReader;
 	private final JsEvaluatorInterface mJsEvaluator;
 	private final String cryptoJsFileNames = "crypto_js";
 	private final String aesCryptoFileName = "aes_crypto";
@@ -36,7 +34,7 @@ public class JsEncryptor implements JsEncryptorInterface {
 
 	private ArrayList<String> mScriptsText;
 
-	public JsEncryptor(AssetsFileReaderInterface assetsFileReader, JsEvaluatorInterface jsEvaluator) {
+	public JsEncryptor(AssetsFileReader assetsFileReader, JsEvaluatorInterface jsEvaluator) {
 		mAssetsFileReader = assetsFileReader;
 		mJsEvaluator = jsEvaluator;
 	}
@@ -52,13 +50,13 @@ public class JsEncryptor implements JsEncryptorInterface {
 		return stringBuilder.toString();
 	}
 
-	@Override
+
 	public void decrypt(String text, String password, JsCallback callback) {
 		final String libraryJsCode = concatenateScripts();
 		mJsEvaluator.callFunction(libraryJsCode, callback, "aesCrypto.decrypt", text, password);
 	}
 
-	@Override
+
 	public void encrypt(String text, String password, JsCallback callback) {
 		final String libraryJsCode = concatenateScripts();
 		mJsEvaluator.callFunction(libraryJsCode, callback, "aesCrypto.encrypt", text, password);
@@ -71,7 +69,7 @@ public class JsEncryptor implements JsEncryptorInterface {
 		return mScriptsText;
 	}
 
-	@Override
+
 	public boolean isEncrypted(String text) {
 		if (text == null)
 			return false;

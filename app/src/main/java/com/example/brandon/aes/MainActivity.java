@@ -35,7 +35,7 @@ import java.io.InputStreamReader;
 
 public class MainActivity extends AppCompatActivity implements CompoundButton.OnCheckedChangeListener {
     private JsEncryptor mJsEncryptor;
-    private TextView encriptar, desencriptar, about;
+    private TextView encriptar, desencriptar, about, info;
     private EditText contrasena, mensaje, archivo;
     private Button save, read;
     private CheckBox check;
@@ -59,10 +59,11 @@ public class MainActivity extends AppCompatActivity implements CompoundButton.On
         read = findViewById(R.id.read);
         about = findViewById(R.id.about);
         check = findViewById(R.id.checkBox);
+        info = findViewById(R.id.textView2);
 
         mJsEncryptor = JsEncryptor.evaluateAllScripts(this);
 
-        Typeface myCustomFont = Typeface.createFromAsset(getAssets(), "fonts/OpenSans-Regular.ttf");
+        Typeface myCustomFont = Typeface.createFromAsset(getAssets(), "fonts/Orbitron-Regular.ttf");
         encriptar.setTypeface(myCustomFont);
         desencriptar.setTypeface(myCustomFont);
         contrasena.setTypeface(myCustomFont);
@@ -71,12 +72,18 @@ public class MainActivity extends AppCompatActivity implements CompoundButton.On
         save.setTypeface(myCustomFont);
         read.setTypeface(myCustomFont);
         about.setTypeface(myCustomFont);
+        check.setTypeface(myCustomFont);
+        info.setTypeface(myCustomFont);
 
 
         check.setOnCheckedChangeListener(this);
 
 
     }
+
+    //------------------------------
+    //ENCRYPTION
+    //------------------------------
 
     public void onEncryptButton(View view) {
         if(!isEncryptable()){
@@ -120,9 +127,6 @@ public class MainActivity extends AppCompatActivity implements CompoundButton.On
                 });
     }
 
-    public void verPassword(View view) {
-
-    }
 
     public boolean isDecryptable(){
         if(!hasPassword()){
@@ -134,12 +138,6 @@ public class MainActivity extends AppCompatActivity implements CompoundButton.On
     public boolean isEncryptable(){
         return hasMessage() && hasPassword();
     }
-
-
-    public JsEncryptor getEncryptor() {
-        return mJsEncryptor;
-    }
-
 
 
     public boolean hasMessage() {
@@ -162,6 +160,9 @@ public class MainActivity extends AppCompatActivity implements CompoundButton.On
         return contrasena.getText().toString().trim();
     }
 
+    //------------------------------
+    //VIEW PASSWORD WITH CHECKBOX
+    //------------------------------
 
     @Override
     public void onCheckedChanged(CompoundButton compoundButton, boolean isChecked) {
@@ -172,6 +173,9 @@ public class MainActivity extends AppCompatActivity implements CompoundButton.On
         }
     }
 
+    //------------------------------
+    //SAVE FILES
+    //------------------------------
 
     private boolean isExternaStorageWritable(){
         if(Environment.MEDIA_MOUNTED.equals(Environment.getExternalStorageState())){
@@ -247,6 +251,11 @@ public class MainActivity extends AppCompatActivity implements CompoundButton.On
             return false;
         }
     }
+
+
+    //------------------------------
+    //GO TO ABOUT SCREEN
+    //------------------------------
 
     public void aboutClick(View v){
         Intent intent = new Intent(MainActivity.this, AboutActivity.class);

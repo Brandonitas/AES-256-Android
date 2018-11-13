@@ -1,5 +1,6 @@
 package com.example.brandon.aes;
 
+import android.graphics.Typeface;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.WindowManager;
@@ -40,7 +41,9 @@ public class AboutActivity extends AppCompatActivity {
         this.getWindow().setFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN,WindowManager.LayoutParams.FLAG_FULLSCREEN);
         textView = findViewById(R.id.textView);
 
+        Typeface myCustomFont = Typeface.createFromAsset(getAssets(), "fonts/Orbitron-Regular.ttf");
         textView.setText(aboutText);
+        textView.setTypeface(myCustomFont);
 
     }
 }
