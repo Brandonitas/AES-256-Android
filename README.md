@@ -1,5 +1,7 @@
 <h1>CryptoApp</h1>
 
+<a href="#"><img src = "./google.png" width="200" heigh= "200"></a>
+
 <p>CryptoApp encrypts text messages and save it with Advanced Encryption Standard.<br>
 AES with 256-bit key is used for encryption.<p>
 
