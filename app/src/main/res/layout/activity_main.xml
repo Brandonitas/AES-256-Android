@@ -19,28 +19,33 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent">
 
-        <TextView
+        <Button
             android:id="@+id/encriptar"
-            android:layout_width="wrap_content"
+            android:background="@drawable/rounded_button"
+            android:layout_width="0dip"
+            android:layout_weight=".5"
             android:layout_height="wrap_content"
             android:onClick="onEncryptButton"
             android:text="Encriptar"
-            android:textColor="@color/font"
-            android:textSize="20sp"
+            android:textColor="@color/negro"
+            android:textSize="16sp"
             app:layout_constraintEnd_toStartOf="@+id/logo"
             app:layout_constraintHorizontal_bias="0.511"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent" />
 
-        <TextView
+        <Button
             android:id="@+id/desencriptar"
-            android:layout_width="wrap_content"
+            android:background="@drawable/rounded_button"
+            android:layout_width="0dip"
+            android:layout_weight=".5"
             android:layout_height="wrap_content"
-            android:layout_marginLeft="60px"
+
+
             android:onClick="onDecryptButton"
             android:text="Desencriptar"
-            android:textColor="@color/font"
-            android:textSize="20dp"
+            android:textColor="@color/negro"
+            android:textSize="16sp"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="0.507"
             app:layout_constraintStart_toEndOf="@+id/logo"
